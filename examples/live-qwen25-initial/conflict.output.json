@@ -1,0 +1,22 @@
+{
+  "status": "model_error",
+  "answer": "本次未能生成可靠答复。",
+  "citations": [],
+  "evidence_gap": "只能读取本轮检索找到的片段",
+  "backend": {
+    "mode": "live",
+    "model": "qwen2.5-1.5b-instruct-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "read",
+      "reason": "需要核对报销期限的相关规定",
+      "observation": {
+        "ok": false,
+        "error": "只能读取本轮检索找到的片段"
+      },
+      "next_action": "model_error"
+    }
+  ]
+}

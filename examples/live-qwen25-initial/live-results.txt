@@ -1,0 +1,10 @@
+FAIL normal: 期望 answered，得到 model_error
+FAIL conflict: 期望 conflict，得到 model_error
+FAIL missing: 期望 insufficient_evidence，得到 model_error
+FAIL paraphrase: 期望 answered，得到 model_error
+FAIL followup: 期望 answered，得到 model_error
+FAIL tool-failure: 期望 tool_error，得到 model_error
+FAIL read-failure: 期望 tool_error，得到 model_error
+FAIL step-limit: 期望 step_limit，得到 model_error
+FAIL revised: 期望 answered，得到 model_error
+Failed: normal, conflict, missing, paraphrase, followup, tool-failure, read-failure, step-limit, revised

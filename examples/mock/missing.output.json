@@ -1,0 +1,60 @@
+{
+  "status": "insufficient_evidence",
+  "answer": "当前知识库未提供足够资料来回答这个问题。",
+  "citations": [],
+  "evidence_gap": "没有找到覆盖该问题的制度或 FAQ。",
+  "backend": {
+    "mode": "mock",
+    "model": "offline-rules"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "定位当前问题的主题",
+      "args": {
+        "query": "公司有没有宠物保险？",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [],
+          "total_hits": 0
+        }
+      },
+      "next_action": "search"
+    },
+    {
+      "step": 2,
+      "action": "search",
+      "reason": "首轮没有候选，尝试缩短检索词",
+      "args": {
+        "query": "公司有没有",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [],
+          "total_hits": 0
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "reason": "两次检索均未找到候选",
+      "args": {
+        "status": "insufficient_evidence",
+        "refs": []
+      },
+      "observation": {
+        "ok": true,
+        "status": "insufficient_evidence"
+      },
+      "next_action": "insufficient_evidence"
+    }
+  ]
+}

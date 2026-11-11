@@ -1,0 +1,10 @@
+PASS normal: answered (3 steps)
+FAIL conflict: 期望 conflict，得到 model_error
+FAIL missing: 期望 insufficient_evidence，得到 model_error
+PASS paraphrase: answered (3 steps)
+PASS followup: answered (3 steps)
+FAIL tool-failure: 期望 tool_error，得到 model_error
+FAIL read-failure: 期望 tool_error，得到 model_error
+PASS step-limit: step_limit (1 steps)
+PASS revised: answered (3 steps)
+Failed: conflict, missing, tool-failure, read-failure

@@ -1,0 +1,74 @@
+{
+  "status": "insufficient_evidence",
+  "answer": "当前知识库未提供足够资料来回答这个问题。",
+  "citations": [],
+  "evidence_gap": "找不到关于宠物保险的任何相关政策或制度文件。",
+  "backend": {
+    "mode": "live",
+    "model": "qwen3-4b-instruct-2507-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "需要定位相关制度",
+      "args": {
+        "query": "宠物保险 是否有相关制度 或 保险类型",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [],
+          "total_hits": 0
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 2,
+      "action": "finish",
+      "reason": "补搜仍未取得相关资料",
+      "args": {
+        "status": "insufficient_evidence",
+        "refs": []
+      },
+      "observation": {
+        "ok": false,
+        "error": "首轮检索为空。请用 action=search 改写主题词补搜，指代不明时可追问。"
+      },
+      "next_action": "search"
+    },
+    {
+      "step": 3,
+      "action": "search",
+      "reason": "需要定位公司是否提供宠物保险的相关制度",
+      "args": {
+        "query": "员工福利 是否包含宠物保险 或 公司是否提供宠物保险类型",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [],
+          "total_hits": 0
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "reason": "补搜仍未取得相关资料",
+      "args": {
+        "status": "insufficient_evidence",
+        "refs": []
+      },
+      "observation": {
+        "ok": true,
+        "status": "insufficient_evidence"
+      },
+      "next_action": "insufficient_evidence"
+    }
+  ]
+}

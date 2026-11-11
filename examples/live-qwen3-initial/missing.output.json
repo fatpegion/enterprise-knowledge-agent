@@ -1,0 +1,60 @@
+{
+  "status": "model_error",
+  "answer": "本次未能生成可靠答复。",
+  "citations": [],
+  "evidence_gap": "无效字段 answer",
+  "backend": {
+    "mode": "live",
+    "model": "qwen3-4b-instruct-2507-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "需要定位公司是否设有宠物保险的相关制度",
+      "args": {
+        "query": "宠物保险 是否有相关制度或政策",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [],
+          "total_hits": 0
+        }
+      },
+      "next_action": "search"
+    },
+    {
+      "step": 2,
+      "action": "search",
+      "reason": "需确认是否存在未明确提及的福利政策",
+      "args": {
+        "query": "员工福利 是否包含宠物保险 或 宠物相关保障政策",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [],
+          "total_hits": 0
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "reason": "现有资料中无提及员工福利包含宠物保险或相关保障政策",
+      "args": {
+        "status": "insufficient_evidence",
+        "refs": []
+      },
+      "observation": {
+        "ok": false,
+        "error": "无效字段 answer"
+      },
+      "next_action": "model_error"
+    }
+  ]
+}

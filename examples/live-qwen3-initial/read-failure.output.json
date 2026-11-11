@@ -1,0 +1,66 @@
+{
+  "status": "model_error",
+  "answer": "本次未能生成可靠答复。",
+  "citations": [],
+  "evidence_gap": "工具参数必须是对象",
+  "backend": {
+    "mode": "live",
+    "model": "qwen3-4b-instruct-2507-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "需要定位相关制度",
+      "args": {
+        "query": "访客网络接入流程",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [
+            {
+              "doc_id": "D03",
+              "title": "访客网络接入 FAQ",
+              "version_date": "2026-02-18",
+              "score": 3,
+              "matched_terms": [
+                "访客网络"
+              ],
+              "passage_ids": [
+                "p1"
+              ]
+            }
+          ],
+          "total_hits": 1
+        }
+      },
+      "next_action": "read"
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "reason": "需要确认访客网络接入的具体流程",
+      "args": {
+        "doc_id": "D03",
+        "passage_id": "p1"
+      },
+      "observation": {
+        "ok": false,
+        "error": "原文读取服务暂不可用"
+      },
+      "next_action": "tool_error"
+    },
+    {
+      "step": 3,
+      "action": "tool_error",
+      "reason": "原文读取服务暂不可用，无法获取访客网络接入的具体流程",
+      "observation": {
+        "ok": false,
+        "error": "工具参数必须是对象"
+      },
+      "next_action": "model_error"
+    }
+  ]
+}

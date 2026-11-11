@@ -1,0 +1,11 @@
+Final checks of recorded live CLI outputs. See live-batch-results.txt and live-conflict-rerun.txt.
+PASS normal: answered (3 steps)
+PASS conflict: conflict (7 steps)
+PASS missing: insufficient_evidence (4 steps)
+PASS paraphrase: answered (3 steps)
+PASS followup: answered (3 steps)
+PASS tool-failure: tool_error (2 steps)
+PASS read-failure: tool_error (3 steps)
+PASS step-limit: step_limit (1 steps)
+PASS revised: answered (3 steps)
+Failed: none

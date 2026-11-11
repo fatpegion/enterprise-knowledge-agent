@@ -1,0 +1,223 @@
+{
+  "count": 7,
+  "matches": {
+    "baseline": 3,
+    "aliases": 7
+  },
+  "cases": [
+    {
+      "query": "访客网络怎么接入？",
+      "expected_top_ids": [
+        "D03"
+      ],
+      "baseline": {
+        "match": true,
+        "hits": [
+          {
+            "doc_id": "D03",
+            "title": "访客网络接入 FAQ",
+            "version_date": "2026-02-18",
+            "score": 3,
+            "matched_terms": [
+              "访客网络"
+            ],
+            "passage_ids": [
+              "p1"
+            ]
+          }
+        ],
+        "total_hits": 1
+      },
+      "aliases": {
+        "match": true,
+        "hits": [
+          {
+            "doc_id": "D03",
+            "title": "访客网络接入 FAQ",
+            "version_date": "2026-02-18",
+            "score": 3,
+            "matched_terms": [
+              "访客网络"
+            ],
+            "passage_ids": [
+              "p1"
+            ]
+          }
+        ],
+        "total_hits": 1
+      }
+    },
+    {
+      "query": "来客上网的访问码怎么办？",
+      "expected_top_ids": [
+        "D03"
+      ],
+      "baseline": {
+        "match": false,
+        "hits": [],
+        "total_hits": 0
+      },
+      "aliases": {
+        "match": true,
+        "hits": [
+          {
+            "doc_id": "D03",
+            "title": "访客网络接入 FAQ",
+            "version_date": "2026-02-18",
+            "score": 2,
+            "matched_terms": [
+              "访客网络"
+            ],
+            "passage_ids": [
+              "p1"
+            ]
+          }
+        ],
+        "total_hits": 1
+      }
+    },
+    {
+      "query": "外来人员连无线要向谁申请？",
+      "expected_top_ids": [
+        "D03"
+      ],
+      "baseline": {
+        "match": false,
+        "hits": [],
+        "total_hits": 0
+      },
+      "aliases": {
+        "match": true,
+        "hits": [
+          {
+            "doc_id": "D03",
+            "title": "访客网络接入 FAQ",
+            "version_date": "2026-02-18",
+            "score": 2,
+            "matched_terms": [
+              "访客网络"
+            ],
+            "passage_ids": [
+              "p1"
+            ]
+          }
+        ],
+        "total_hits": 1
+      }
+    },
+    {
+      "query": "我垫付款最晚什么时候申报？",
+      "expected_top_ids": [
+        "D01",
+        "D02"
+      ],
+      "baseline": {
+        "match": false,
+        "hits": [],
+        "total_hits": 0
+      },
+      "aliases": {
+        "match": true,
+        "hits": [
+          {
+            "doc_id": "D01",
+            "title": "费用报销制度",
+            "version_date": "2026-01-12",
+            "score": 2,
+            "matched_terms": [
+              "报销"
+            ],
+            "passage_ids": [
+              "p1"
+            ],
+            "policy_topic": "员工报销提交期限"
+          },
+          {
+            "doc_id": "D02",
+            "title": "报销操作指引",
+            "version_date": "2026-03-04",
+            "score": 2,
+            "matched_terms": [
+              "报销"
+            ],
+            "passage_ids": [
+              "p1"
+            ],
+            "policy_topic": "员工报销提交期限"
+          }
+        ],
+        "total_hits": 2
+      }
+    },
+    {
+      "query": "专业版保存成片有没有角标？",
+      "expected_top_ids": [
+        "D05"
+      ],
+      "baseline": {
+        "match": false,
+        "hits": [],
+        "total_hits": 0
+      },
+      "aliases": {
+        "match": true,
+        "hits": [
+          {
+            "doc_id": "D05",
+            "title": "视频导出水印 FAQ",
+            "version_date": "2026-04-22",
+            "score": 4,
+            "matched_terms": [
+              "导出",
+              "水印"
+            ],
+            "passage_ids": [
+              "p1"
+            ]
+          },
+          {
+            "doc_id": "D04",
+            "title": "视频导出规格 FAQ",
+            "version_date": "2026-04-22",
+            "score": 2,
+            "matched_terms": [
+              "导出"
+            ],
+            "passage_ids": [
+              "p1"
+            ]
+          }
+        ],
+        "total_hits": 2
+      }
+    },
+    {
+      "query": "公司有没有宠物保险？",
+      "expected_top_ids": [],
+      "baseline": {
+        "match": true,
+        "hits": [],
+        "total_hits": 0
+      },
+      "aliases": {
+        "match": true,
+        "hits": [],
+        "total_hits": 0
+      }
+    },
+    {
+      "query": "多久才能预约会议室？",
+      "expected_top_ids": [],
+      "baseline": {
+        "match": true,
+        "hits": [],
+        "total_hits": 0
+      },
+      "aliases": {
+        "match": true,
+        "hits": [],
+        "total_hits": 0
+      }
+    }
+  ]
+}

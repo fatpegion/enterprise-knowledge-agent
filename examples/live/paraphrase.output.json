@@ -1,0 +1,89 @@
+{
+  "status": "answered",
+  "answer": "来客上网的访问码由接待员工在前台为其申请当日有效访问码。",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "title": "访客网络接入 FAQ",
+      "version_date": "2026-02-18",
+      "passage_id": "p1",
+      "text": "来访人员连接 Guest-WiFi 后，由接待员工在前台申请当日有效的访问码。"
+    }
+  ],
+  "evidence_gap": "",
+  "backend": {
+    "mode": "live",
+    "model": "qwen3-4b-instruct-2507-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "需要定位相关制度",
+      "args": {
+        "query": "来客上网 访问码 管理制度",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [
+            {
+              "doc_id": "D03",
+              "title": "访客网络接入 FAQ",
+              "version_date": "2026-02-18",
+              "score": 2,
+              "matched_terms": [
+                "访客网络"
+              ],
+              "passage_ids": [
+                "p1"
+              ]
+            }
+          ],
+          "total_hits": 1
+        }
+      },
+      "next_action": "read"
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "reason": "需要核对访客上网访问码的具体管理规定",
+      "args": {
+        "doc_id": "D03",
+        "passage_id": "p1"
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "doc_id": "D03",
+          "title": "访客网络接入 FAQ",
+          "version_date": "2026-02-18",
+          "passage_id": "p1",
+          "text": "来访人员连接 Guest-WiFi 后，由接待员工在前台申请当日有效的访问码。"
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "reason": "原文明确说明了访问码的申请流程",
+      "args": {
+        "status": "answered",
+        "refs": [
+          {
+            "doc_id": "D03",
+            "passage_id": "p1"
+          }
+        ]
+      },
+      "observation": {
+        "ok": true,
+        "status": "answered"
+      },
+      "next_action": "answered"
+    }
+  ]
+}

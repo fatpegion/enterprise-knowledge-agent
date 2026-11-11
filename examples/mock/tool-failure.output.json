@@ -1,0 +1,40 @@
+{
+  "status": "tool_error",
+  "answer": "知识库工具暂时不可用，请稍后重试。",
+  "citations": [],
+  "evidence_gap": "无法取得必要原文。",
+  "backend": {
+    "mode": "mock",
+    "model": "offline-rules"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "定位当前问题的主题",
+      "args": {
+        "query": "访客网络怎么接入？",
+        "limit": 5
+      },
+      "observation": {
+        "ok": false,
+        "error": "检索服务暂不可用"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 2,
+      "action": "finish",
+      "reason": "工具失败，无法核验",
+      "args": {
+        "status": "tool_error",
+        "refs": []
+      },
+      "observation": {
+        "ok": true,
+        "status": "tool_error"
+      },
+      "next_action": "tool_error"
+    }
+  ]
+}

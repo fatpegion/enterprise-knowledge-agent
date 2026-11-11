@@ -1,0 +1,40 @@
+{
+  "status": "tool_error",
+  "answer": "知识库工具暂不可用，请稍后再试。",
+  "citations": [],
+  "evidence_gap": "未能取得原文。",
+  "backend": {
+    "mode": "live",
+    "model": "qwen3-4b-instruct-2507-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "需要定位相关制度",
+      "args": {
+        "query": "访客网络接入流程",
+        "limit": 5
+      },
+      "observation": {
+        "ok": false,
+        "error": "检索服务暂不可用"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 2,
+      "action": "finish",
+      "reason": "必要工具失败",
+      "args": {
+        "status": "tool_error",
+        "refs": []
+      },
+      "observation": {
+        "ok": true,
+        "status": "tool_error"
+      },
+      "next_action": "tool_error"
+    }
+  ]
+}

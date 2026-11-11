@@ -1,0 +1,226 @@
+{
+  "status": "conflict",
+  "answer": "员工报销期限存在不同规定：根据《费用报销制度》（2026-01-12），期限为费用发生之日起30天内；根据《报销操作指引》（2026-03-04），期限为费用发生之日起15天内。两个文件规定冲突，需确认适用制度及优先级。\n请向制度负责人确认你适用的规则。",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "title": "费用报销制度",
+      "version_date": "2026-01-12",
+      "passage_id": "p1",
+      "text": "员工应于费用发生之日起 30 天内提交报销申请。"
+    },
+    {
+      "doc_id": "D02",
+      "title": "报销操作指引",
+      "version_date": "2026-03-04",
+      "passage_id": "p1",
+      "text": "员工应于费用发生之日起 15 天内提交报销申请。"
+    }
+  ],
+  "evidence_gap": "缺少关于两种期限适用范围、优先级或例外情况的明确规则。",
+  "backend": {
+    "mode": "live",
+    "model": "qwen3-4b-instruct-2507-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "需要定位相关制度",
+      "args": {
+        "query": "员工报销期限 多少天",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [
+            {
+              "doc_id": "D01",
+              "title": "费用报销制度",
+              "version_date": "2026-01-12",
+              "score": 3,
+              "matched_terms": [
+                "报销"
+              ],
+              "passage_ids": [
+                "p1"
+              ],
+              "policy_topic": "员工报销提交期限"
+            },
+            {
+              "doc_id": "D02",
+              "title": "报销操作指引",
+              "version_date": "2026-03-04",
+              "score": 3,
+              "matched_terms": [
+                "报销"
+              ],
+              "passage_ids": [
+                "p1"
+              ],
+              "policy_topic": "员工报销提交期限"
+            }
+          ],
+          "total_hits": 2
+        }
+      },
+      "next_action": "read"
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "reason": "需要核对费用报销制度中关于报销期限的具体规定",
+      "args": {
+        "doc_id": "D01",
+        "passage_id": "p1"
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "doc_id": "D01",
+          "title": "费用报销制度",
+          "version_date": "2026-01-12",
+          "passage_id": "p1",
+          "text": "员工应于费用发生之日起 30 天内提交报销申请。"
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "reason": "原文明确指出报销期限为费用发生后30天内",
+      "args": {
+        "status": "answered",
+        "refs": [
+          {
+            "doc_id": "D01",
+            "passage_id": "p1"
+          }
+        ]
+      },
+      "observation": {
+        "ok": false,
+        "error": "同一制度事项还有未读原文。使用 read 核对 unread 中的文档与片段。",
+        "unread": [
+          {
+            "doc_id": "D02",
+            "passage_id": "p1"
+          }
+        ]
+      },
+      "next_action": "read"
+    },
+    {
+      "step": 4,
+      "action": "read",
+      "reason": "需要核对同一制度事项下其他原文的报销期限规定",
+      "args": {
+        "doc_id": "D02",
+        "passage_id": "p1"
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "doc_id": "D02",
+          "title": "报销操作指引",
+          "version_date": "2026-03-04",
+          "passage_id": "p1",
+          "text": "员工应于费用发生之日起 15 天内提交报销申请。"
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "reason": "两份文件对同一事项规定不同，构成制度冲突",
+      "args": {
+        "status": "conflict",
+        "refs": [
+          {
+            "doc_id": "D01",
+            "passage_id": "p1"
+          },
+          {
+            "doc_id": "D02",
+            "passage_id": "p1"
+          }
+        ]
+      },
+      "observation": {
+        "ok": false,
+        "error": "冲突补查尚未执行。下一步使用 action=search，query 由你根据当前问题写出，并包含适用范围、例外或优先级。"
+      },
+      "next_action": "search"
+    },
+    {
+      "step": 6,
+      "action": "search",
+      "reason": "需要定位不同制度对报销期限的适用范围、优先级及例外情况",
+      "args": {
+        "query": "员工报销期限 30天 vs 15天 适用范围 优先级 例外",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [
+            {
+              "doc_id": "D01",
+              "title": "费用报销制度",
+              "version_date": "2026-01-12",
+              "score": 3,
+              "matched_terms": [
+                "报销"
+              ],
+              "passage_ids": [
+                "p1"
+              ],
+              "policy_topic": "员工报销提交期限"
+            },
+            {
+              "doc_id": "D02",
+              "title": "报销操作指引",
+              "version_date": "2026-03-04",
+              "score": 3,
+              "matched_terms": [
+                "报销"
+              ],
+              "passage_ids": [
+                "p1"
+              ],
+              "policy_topic": "员工报销提交期限"
+            }
+          ],
+          "total_hits": 2
+        }
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 7,
+      "action": "finish",
+      "reason": "发现不同制度对报销期限提出矛盾规定，需明确适用规则",
+      "args": {
+        "status": "conflict",
+        "refs": [
+          {
+            "doc_id": "D01",
+            "passage_id": "p1"
+          },
+          {
+            "doc_id": "D02",
+            "passage_id": "p1"
+          }
+        ]
+      },
+      "observation": {
+        "ok": true,
+        "status": "conflict"
+      },
+      "next_action": "conflict"
+    }
+  ]
+}

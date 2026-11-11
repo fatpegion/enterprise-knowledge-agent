@@ -1,0 +1,42 @@
+{
+  "status": "step_limit",
+  "answer": "已达到执行步数上限，本次未完成。",
+  "citations": [],
+  "evidence_gap": "尚未形成通过校验的最终答复。",
+  "backend": {
+    "mode": "live",
+    "model": "qwen3-4b-instruct-2507-q4_k_m"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "reason": "需要定位相关制度",
+      "args": {
+        "query": "访客网络接入流程",
+        "limit": 5
+      },
+      "observation": {
+        "ok": true,
+        "result": {
+          "hits": [
+            {
+              "doc_id": "D03",
+              "title": "访客网络接入 FAQ",
+              "version_date": "2026-02-18",
+              "score": 3,
+              "matched_terms": [
+                "访客网络"
+              ],
+              "passage_ids": [
+                "p1"
+              ]
+            }
+          ],
+          "total_hits": 1
+        }
+      },
+      "next_action": "step_limit"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+PASS normal: answered (3 steps)
+PASS conflict: conflict (5 steps)
+PASS missing: insufficient_evidence (3 steps)
+PASS paraphrase: answered (3 steps)
+PASS followup: answered (4 steps)
+PASS tool-failure: tool_error (2 steps)
+PASS read-failure: tool_error (3 steps)
+PASS step-limit: step_limit (1 steps)
+PASS revised: answered (3 steps)
+Failed: none
